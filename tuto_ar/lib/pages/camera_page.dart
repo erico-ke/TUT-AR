@@ -1,25 +1,26 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});
-
-  @override
-  _CameraPageState createState() => _CameraPageState();
+  @override 
+  CameraPageState createState() => CameraPageState();
 }
 
-class _CameraPageState extends State<CameraPage> {
+class CameraPageState extends State<CameraPage> {
   CameraController? _controller;
   List<CameraDescription>? cameras;
   bool _isCameraInitialized = false;
 
   @override
   void initState() {
+    WidgetsFlutterBinding.ensureInitialized();
     super.initState();
     _initializeCamera();
   }
 
   Future<void> _initializeCamera() async {
+    WidgetsFlutterBinding.ensureInitialized();
     cameras = await availableCameras();
     if (cameras != null && cameras!.isNotEmpty) {
       _controller = CameraController(cameras![0], ResolutionPreset.high);
@@ -39,9 +40,6 @@ class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Camera Page'),
-      ),
       body: _isCameraInitialized
           ? CameraPreview(_controller!)
           : Center(child: CircularProgressIndicator()),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/camera_page.dart';
 
+
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,8 +92,7 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    child: TextButton(
+                 TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.blue, // Color del texto
@@ -102,7 +103,6 @@ class LoginPage extends StatelessWidget {
                       ),
                       child: Text("Forgot Password?"),
                     ),
-                  )
                 ],
               ),
             ),
@@ -112,6 +112,9 @@ class LoginPage extends StatelessWidget {
 }
 
 void main() {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MaterialApp(
     home: CameraPage(),
   ));
