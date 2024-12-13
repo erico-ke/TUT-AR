@@ -56,6 +56,7 @@ class LoginPage extends StatelessWidget {
                     keyboardType: TextInputType.emailAddress,
                     textAlign: TextAlign.center,
                     cursorColor: const Color(0xff0a1699),
+                    obscureText: true,
                     decoration: InputDecoration(
                         hintText: 'Password',
                         border: const OutlineInputBorder(
