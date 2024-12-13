@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tuto_ar/pages/camera_page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
-              child: Container(
+              /* child: Container(
                 //container de foto logo
                 height: 200,
                 margin: const EdgeInsets.symmetric(vertical: 40),
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
                   image: AssetImage('logo.jpg'),
                   height: double.maxFinite,
                 ),
-              ),
+              ), */
             ),
             SizedBox(
               height: 300,
@@ -72,9 +73,9 @@ class LoginPage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                             const Color(0xff38A3A5)),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -112,6 +113,6 @@ class LoginPage extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: LoginPage(),
+    home: CameraPage(),
   ));
 }
