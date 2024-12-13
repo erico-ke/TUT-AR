@@ -8,10 +8,12 @@ class MainPage extends StatelessWidget {
     return  Scaffold
   (
     appBar: AppBar(
-      title: const Text('Main Page'),
+      title: const Text('Welcome back!'),
     ),
-    body: const Center(
-      child: Text('Main Content'),
+    body:  Center(
+      child: Container(
+        child: Text('Main Page'),
+      ),
     ),
     bottomNavigationBar: BottomNavigationBar(
       items: const <BottomNavigationBarItem>[

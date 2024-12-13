@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:tuto_ar/pages/main_page.dart';
 
+import 'package:tuto_ar/pages/camera_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 18),
                       keyboardType: TextInputType.emailAddress,
                       textAlign: TextAlign.center,
-                      cursorColor: const Color(0xff0a1699),
+                      cursorColor: const Color(0xff022577A),
                       decoration: InputDecoration(
                           hintText: 'Email',
                           border: const OutlineInputBorder(
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 18),
                     keyboardType: TextInputType.emailAddress,
                     textAlign: TextAlign.center,
-                    cursorColor: const Color(0xff0a1699),
+                    cursorColor: const Color(0xff022577A),
                     obscureText: true,
                     decoration: InputDecoration(
                         hintText: 'Password',
@@ -83,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MainPage()),
-            );
+                          context,
+                          MaterialPageRoute(builder: (context) => CameraPage()),
+                        );
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
@@ -107,7 +107,27 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Container(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // Acción del botón
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('Action Required'),
+                              content: const Text('Check your email'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .pop(); // Cerrar el popup
+                                  },
+                                  child: const Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.blue, // Color del texto
                         textStyle: TextStyle(
