@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+import 'package:tuto_ar/pages/main_page.dart';
+
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +25,7 @@ class LoginPage extends StatelessWidget {
                 height: 200,
                 margin: const EdgeInsets.symmetric(vertical: 40),
                 child: const Image(
-                  image: AssetImage('logo.jpg'),
+                  image: AssetImage('logo.png'),
                   height: double.maxFinite,
                 ),
               ),
@@ -71,7 +81,12 @@ class LoginPage extends StatelessWidget {
                     height: 45,
                     width: 220,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MainPage()),
+            );
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xff38A3A5)),
