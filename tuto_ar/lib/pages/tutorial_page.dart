@@ -30,6 +30,15 @@ class TutorialPage extends StatelessWidget {
                 return ListTile(
                   leading: Icon(Icons.list),
                   title: Text('List Item ${index + 1}'),
+                  onTap: () {
+                    // !TODO: CAMBIAR A LA PÁGINA DE DETALLE
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TutorialPage(),
+                      ),
+                    );
+                  },
                 );
               },
             ),
