@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_ar/pages/search_page.dart';
+import 'package:tuto_ar/pages/main_page.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text('Main Page'),
+          child: Text('Search Page'),
         ),
       ),
       bottomNavigationBar: Container(
@@ -42,7 +42,6 @@ class MainPage extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.home,
-                    color: const Color(0xff22577A),
                   ),
                 ),
               ),
@@ -67,7 +66,10 @@ class MainPage extends StatelessWidget {
                           builder: (context) => SearchPage(),
                         ));
                   },
-                  child: Icon(Icons.search),
+                  child: Icon(
+                    Icons.search,
+                    color: const Color(0xff22577A),
+                  ),
                 ),
               ),
               Container(
