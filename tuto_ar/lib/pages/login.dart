@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
-
 import 'package:tuto_ar/pages/camera_page.dart';
+//import 'package:tuto_ar/pages/main_page.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,6 +9,9 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
+String email = 'user@tuto-ar.tech';
+String password = 'pepe123';
 
 class _LoginPageState extends State<LoginPage> {
   @override
@@ -45,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 18),
                       keyboardType: TextInputType.emailAddress,
                       textAlign: TextAlign.center,
-                      cursorColor: const Color(0xff022577A),
+                      cursorColor: const Color(0xff22577A),
                       decoration: InputDecoration(
                           hintText: 'Email',
                           border: const OutlineInputBorder(
@@ -108,7 +111,6 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     child: TextButton(
                       onPressed: () {
-                        // Acción del botón
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
