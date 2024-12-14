@@ -148,6 +148,6 @@ class _LoginPageState extends State<LoginPage> {
 
 void main() {
   runApp(MaterialApp(
-    home: MainPage(),
+    home: LoginPage(),
   ));
 }
