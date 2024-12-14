@@ -19,7 +19,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome back!'),
+        title: const Text('Tuto-AR'),
       ),
       body: Center(
         child: Column(
