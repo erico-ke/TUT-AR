@@ -22,24 +22,24 @@ class MainPage extends StatelessWidget {
             children: [
               Container(
                 height: 70.0,
-                child: ElevatedButton(
                 width: MediaQuery.of(context).size.width / 3,
+                child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
+                    backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                      ),
                         borderRadius: BorderRadius.zero,
+                      ),
                     ),
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => MainPage()),
-                  },
                     );
+                  },
                   child: Icon(
                     Icons.home,
                     color: const Color(0xff22577A),
@@ -51,45 +51,44 @@ class MainPage extends StatelessWidget {
                 height: 70.0,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
+                    backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
-                    ),
                       ),
+                    ),
                   ),
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        ));
-                          builder: (context) => SearchPage(),
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchPage(),
+                      ),
+                    );
                   },
-                ),
                   child: Icon(Icons.search),
+                ),
               ),
               Container(
                 height: 70.0,
                 width: MediaQuery.of(context).size.width / 3,
                 child: ElevatedButton(
-                    backgroundColor: WidgetStateProperty.all<Color>(
                   style: ButtonStyle(
-                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         borderRadius: BorderRadius.zero,
                       ),
-                  ),
                     ),
+                  ),
                   onPressed: () {},
                   child: Icon(Icons.person),
                 ),
-            ],
               ),
-          )),
-    );
+          ])));
   }
 }
