@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
-import 'package:tuto_ar/pages/bookmark_page.dart';
 
 class UserProfilePage extends StatelessWidget {
   @override

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
-import 'package:tuto_ar/pages/bookmark_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
