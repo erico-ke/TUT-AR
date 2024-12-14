@@ -53,13 +53,24 @@ class SearchResult extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 16),
-                          Expanded(
+                            Expanded(
                             flex: 2,
-                            child: Text(
+                            child: GestureDetector(
+                              onTap: () {
+                                // Acción al presionar el botón
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BookmarkPage(),
+                                  ),
+                                );
+                              },
+                              child: Text(
                               '${names[index]}',
                               style: TextStyle(fontSize: 18.0),
+                              ),
                             ),
-                          ),
+                            ),
                         ],
                       ),
                     );
