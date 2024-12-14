@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/main_page.dart';
-import 'package:tuto_ar/pages/user_page.dart';
+import 'package:tuto_ar/pages/search_page.dart';
 
-
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class SearchPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text('Search Page'),
+          child: Text('User Page'),
         ),
       ),
       bottomNavigationBar: Container(
@@ -70,7 +69,6 @@ class SearchPage extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.search,
-                    color: const Color(0xff22577A),
                   ),
                 ),
               ),
@@ -94,7 +92,7 @@ class SearchPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => UserPage()),
                     );
                   },
-                  child: Icon(Icons.person),
+                  child: Icon(color: const Color(0xff22577A), Icons.person),
                 ),
               ),
             ],

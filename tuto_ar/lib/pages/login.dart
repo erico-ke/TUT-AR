@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_ar/pages/main_page.dart';
 //import 'package:tuto_ar/pages/main_page.dart';
+import 'package:tuto_ar/pages/search_page.dart';
+import 'package:tuto_ar/pages/create_account_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -86,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MainPage()),
+                          MaterialPageRoute(builder: (context) => SearchPage()),
                         );
                       },
                       style: ButtonStyle(
@@ -136,7 +137,25 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      child: Text("Forgot Password?"),
+                      child: Text("Forgot password?"),
+                    ),
+                  ),
+                  Container(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CreateAccountPage()));
+                      },
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.blue, // Color del texto
+                        textStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      child: Text("Create account"),
                     ),
                   )
                 ],
