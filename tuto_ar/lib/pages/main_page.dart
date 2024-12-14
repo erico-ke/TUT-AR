@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                           Expanded(
                             flex: 3,
                             child: Card(
-                              color: Colors.blue,
+                              color: const Color.fromARGB(255, 255, 255, 255),
                               child: Container(
                                 height: MediaQuery.of(context).size.height / 6,
                                 child: Center(
