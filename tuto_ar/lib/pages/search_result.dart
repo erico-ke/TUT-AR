@@ -5,7 +5,7 @@ import 'package:tuto_ar/pages/user_profile_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
 
 
-final List<String> names = ['Coffee making Tutorial', 'How to make coffee', 'The coffee final guide', "How to make a coffee for beginners"];
+final List<String> names = ['Coffee making Tutorial\n3 ★', 'How to make coffee\n4.2 ★', 'The coffee final guide\n5 ★', "How to make a coffee for beginners\n2.4 ★"];
 final List<Image> numbers = [
   Image.asset('cofe.jpeg'),
   Image.asset('coffe.png'),
