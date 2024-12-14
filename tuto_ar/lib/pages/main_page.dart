@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_page.dart';
 
-final List<int> numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55];
+final List<int> numbers = [1, 2, 3, 4, 5];
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -21,25 +21,27 @@ class MainPage extends StatelessWidget {
                 child: Text('Continue learning!'),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-                height: MediaQuery.of(context).size.height * 0.3,
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+                height: MediaQuery.of(context).size.height / 1.3,
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.vertical,
                     itemCount: numbers.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        width: MediaQuery.of(context).size.width * 0.15,
-                        child: Card(
-                          color: Colors.blue,
-                          child: Container(
-                            child: Center(
-                                child: Text(
-                              numbers[index].toString(),
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 36.0),
-                            )),
-                          ),
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      margin: EdgeInsets.symmetric(vertical: 10.0),
+                      child: Card(
+                        color: Colors.blue,
+                        child: Container(
+                        height: MediaQuery.of(context).size.height / 6,
+                        child: Center(
+                          child: Text(
+                          numbers[index].toString(),
+                            style: TextStyle(
+                            color: Colors.white, fontSize: 36.0),
+                        )),
                         ),
+                      ),
                       );
                     }),
               ),
