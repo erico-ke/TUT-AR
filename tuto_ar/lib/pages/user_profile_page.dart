@@ -1,49 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
-import 'package:tuto_ar/pages/user_profile_page.dart';
+import 'package:tuto_ar/pages/search_page.dart';
+import 'package:tuto_ar/pages/bookmark_page.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
-
+class UserProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome back!'),
+        title: Text('User Profile'),  
+        centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: ListView(
-            children: const [
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Juan Pérez'),
-                subtitle: Text('Ingeniero de Software'),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Foto de perfil
+            CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage('profile_picture.png'), // Reemplazar con imagen de red o local
+              backgroundColor: Colors.grey[300],
+            ),
+            SizedBox(height: 16),
+            // Nombre del usuario
+            Text(
+              'User_tuto_ar',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('María López'),
-                subtitle: Text('Diseñadora Gráfica'),
+            ),
+            SizedBox(height: 8),
+            // Correo electrónico
+            Text(
+              'user@tuto-ar.tech',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
               ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Carlos Gómez'),
-                subtitle: Text('Gerente de Proyectos'),
+            ),
+            SizedBox(height: 24),
+            // Botón Editar Perfil
+            ElevatedButton.icon(
+              onPressed: () {
+                // Acción para editar perfil
+                print('Editar perfil');
+              },
+              icon: Icon(Icons.edit),
+              label: Text('Editar Perfil'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 50), // Botón ancho completo
               ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Ana Torres'),
-                subtitle: Text('Especialista en Marketing'),
+            ),
+            SizedBox(height: 16),
+            // Botón Cerrar Sesión
+            OutlinedButton.icon(
+              onPressed: () {
+                // Acción para cerrar sesión
+                print('Cerrar sesión');
+              },
+              icon: Icon(Icons.logout),
+              label: Text('Cerrar Sesión'),
+              style: OutlinedButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
-      bottomNavigationBar: Container(
+      ),bottomNavigationBar: Container(
             color: const Color(0xffC7F9CC),
             height: 70.0, 
             child: Row(children: [

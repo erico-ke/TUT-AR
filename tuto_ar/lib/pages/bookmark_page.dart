@@ -1,47 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
+import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class BookmarkPage extends StatelessWidget {
+  final List<Map<String, String>> bookmarks = [
+    {
+      'icon': Icons.bookmark.toString(),
+      'title': 'Tutorial sample',
+      'subtitle': '5 ★'
+    },
+    {
+      'icon': Icons.bookmark.toString(),
+      'title': 'Tutorial sample',
+      'subtitle': '3.5 ★'
+    },
+    {
+      'icon': Icons.bookmark.toString(),
+      'title': 'Tutorial sample',
+      'subtitle': '4.5 ★'
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome back!'),
+        title: Text('Bookmarks'),
       ),
-      body: Center(
-        child: Container(
-          child: ListView(
-            children: const [
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Juan Pérez'),
-                subtitle: Text('Ingeniero de Software'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('María López'),
-                subtitle: Text('Diseñadora Gráfica'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Carlos Gómez'),
-                subtitle: Text('Gerente de Proyectos'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Ana Torres'),
-                subtitle: Text('Especialista en Marketing'),
-              ),
-            ],
-          ),
-        ),
+      body: ListView.builder(
+        itemCount: bookmarks.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.bookmark),
+            title: Text(bookmarks[index]['title']!),
+            subtitle: Text(bookmarks[index]['subtitle']!),
+          );
+        },
       ),
       bottomNavigationBar: Container(
             color: const Color(0xffC7F9CC),
