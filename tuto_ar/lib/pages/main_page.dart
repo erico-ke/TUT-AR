@@ -71,13 +71,13 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ),),
         bottomNavigationBar: Container(
             color: const Color(0xffC7F9CC),
             height: 70.0, 
             child: Row(children: [
-                height: 70.0,
               Container(
+                height: 70.0,
                 child: ElevatedButton(
                 width: MediaQuery.of(context).size.width / 4,
                   style: ButtonStyle(
