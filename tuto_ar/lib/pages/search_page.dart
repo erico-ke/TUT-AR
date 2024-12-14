@@ -3,50 +3,51 @@ import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 
-
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Welcome back!'),
-      ),
-      body: Center(
-        child: Container(
-          child: ListView(
-            children: const [
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Juan Pérez'),
-                subtitle: Text('Ingeniero de Software'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('María López'),
-                subtitle: Text('Diseñadora Gráfica'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Carlos Gómez'),
-                subtitle: Text('Gerente de Proyectos'),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Ana Torres'),
-                subtitle: Text('Especialista en Marketing'),
-              ),
-            ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: Container(
+        appBar: AppBar(),
+        body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                // Barra de búsqueda
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Buscar...',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8), // Espacio entre la barra y el botón
+                // Botón de lupa
+                ElevatedButton(
+                  onPressed: () {
+                    // Acción al presionar el botón
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(14.0), // Tamaño del botón
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: const Icon(Icons.search),
+                ),
+              ],
+            )),
+        bottomNavigationBar: Container(
             color: const Color(0xffC7F9CC),
-            height: 70.0, 
+            height: 70.0,
             child: Row(children: [
               Container(
                 height: 70.0,
@@ -95,8 +96,7 @@ class SearchPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Icon(color: const Color(0xff22577A),
-Icons.search),
+                  child: Icon(color: const Color(0xff22577A), Icons.search),
                 ),
               ),
               Container(
@@ -148,7 +148,6 @@ Icons.search),
                   child: Icon(Icons.person),
                 ),
               ),
-            ]))
-    );
+            ])));
   }
 }
