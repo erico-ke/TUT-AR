@@ -78,14 +78,13 @@ class MainPage extends StatelessWidget {
             child: Row(children: [
               Container(
                 height: 70.0,
-                child: ElevatedButton(
                 width: MediaQuery.of(context).size.width / 4,
+                child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
                   ),
-                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -96,7 +95,7 @@ class MainPage extends StatelessWidget {
                   Icons.home,
                   color: const Color(0xff22577A),
                 ),
-              ),
+              ),),
               Container(
                 width: MediaQuery.of(context).size.width / 4,
                 height: 70.0,
@@ -106,7 +105,6 @@ class MainPage extends StatelessWidget {
                       const Color(0xffC7F9CC),
                     ),
                   ),
-                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -116,7 +114,7 @@ class MainPage extends StatelessWidget {
                   );
                 },
                 child: Icon(Icons.search),
-              ),
+              ),),
               Container(
                 width: MediaQuery.of(context).size.width / 4,
                 height: 70.0,
@@ -159,15 +157,7 @@ class MainPage extends StatelessWidget {
                     );
                   },
                   child: Icon(Icons.person),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => UserPage()),
-                    );
-                },
-                child: Icon(Icons.person),
-              ),
+                  ),
             ),
           ],
         ),

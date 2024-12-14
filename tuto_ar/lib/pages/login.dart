@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/create_account_page.dart';
-import 'package:tuto_ar/pages/tutorial_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -87,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => TutorialPage()),
+                          MaterialPageRoute(builder: (context) => MainPage()),
                         );
                       },
                       style: ButtonStyle(
