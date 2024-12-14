@@ -3,6 +3,7 @@ import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 
+
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:tuto_ar/pages/search_page.dart';
+import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/create_account_page.dart';
 import 'package:tuto_ar/pages/tutorial_page.dart';
 
