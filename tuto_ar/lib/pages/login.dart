@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:tuto_ar/pages/main_page.dart';
-import 'package:tuto_ar/pages/search_page.dart';
+import 'package:tuto_ar/pages/main_page.dart';
 import 'package:tuto_ar/pages/create_account_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -87,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SearchPage()),
+                          MaterialPageRoute(builder: (context) => MainPage()),
                         );
                       },
                       style: ButtonStyle(

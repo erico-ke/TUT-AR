@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_page.dart';
 
+final List<int> numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55];
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -12,8 +14,36 @@ class MainPage extends StatelessWidget {
           title: const Text('Welcome back!'),
         ),
         body: Center(
-          child: Container(
-            child: Text('Main Page'),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
+                child: Text('Continue learning!'),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: numbers.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        child: Card(
+                          color: Colors.blue,
+                          child: Container(
+                            child: Center(
+                                child: Text(
+                              numbers[index].toString(),
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 36.0),
+                            )),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: Container(
