@@ -3,6 +3,8 @@ import 'package:tuto_ar/pages/camera_page.dart';
 //import 'package:tuto_ar/pages/main_page.dart';
 
 
+import 'package:tuto_ar/pages/camera_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -68,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 18),
                     keyboardType: TextInputType.emailAddress,
                     textAlign: TextAlign.center,
-                    cursorColor: const Color(0xff022577A),
+                    cursorColor: const Color(0xff22577A),
                     obscureText: true,
                     decoration: InputDecoration(
                         hintText: 'Password',
@@ -87,13 +89,13 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => CameraPage()),
+                          MaterialPageRoute(builder: (context) => MainPage()),
                         );
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                             const Color(0xff38A3A5)),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
