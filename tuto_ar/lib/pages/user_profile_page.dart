@@ -77,10 +77,10 @@ class UserProfilePage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 4,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       ),
@@ -94,7 +94,6 @@ class UserProfilePage extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.home,
-                    color: const Color(0xff22577A),
                   ),
                 ),
               ),
@@ -103,10 +102,10 @@ class UserProfilePage extends StatelessWidget {
                 height: 70.0,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       ),
@@ -128,10 +127,10 @@ class UserProfilePage extends StatelessWidget {
                 height: 70.0,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       ),
@@ -153,10 +152,10 @@ class UserProfilePage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 4,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       const Color(0xffC7F9CC),
                     ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       ),
@@ -169,7 +168,7 @@ class UserProfilePage extends StatelessWidget {
                           builder: (context) => UserProfilePage()),
                     );
                   },
-                  child: Icon(Icons.person),
+                  child: Icon(color: const Color(0xff22577A),Icons.person),
                 ),
               ),
             ]))
