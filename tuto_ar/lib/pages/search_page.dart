@@ -12,12 +12,28 @@ class SearchPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text('Search Page'),
+          child: 
+        ListView(
+          children: const [
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+          ],
+        )
         ),
       ),
       bottomNavigationBar: Container(
           color: const Color(0xffC7F9CC),
-          height: 70.0, // Doubled the height from default 56.0
+          height: 70.0,
           child: Row(
             children: [
               Container(
