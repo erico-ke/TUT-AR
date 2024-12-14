@@ -25,7 +25,7 @@ class UserProfilePage extends StatelessWidget {
             SizedBox(height: 16),
             // Nombre del usuario
             Text(
-              'User_tuto_ar',
+              'Tuto-AR_User',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

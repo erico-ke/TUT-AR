@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
-import 'package:tuto_ar/pages/user_profile_page.dart';
+import 'package:tuto_ar/pages/user_page.dart';
 
 final List<String> names = ['Arduino Basics 101', 'Changing a Tire', 'How to cook risotto', 'How to change a diaper', 'Giving your Laptop a new Ram'];
-final List<Image> numbers = [
-  Image.asset('arduino.png'),
-  Image.asset('tire.png'),
-  Image.asset('risotto.png'),
-  Image.asset('diaper.png'),
-  Image.asset('ram.png'),
+final List<String> imagePaths = [
+  'assets/images/arduino.png',
+  'assets/images/tire.png',
+  'assets/images/risotto.png',
+  'assets/images/diaper.png',
+  'assets/images/ram.png',
 ];
 
 class MainPage extends StatelessWidget {
@@ -36,7 +35,7 @@ class MainPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: numbers.length,
+                  itemCount: imagePaths.length,
                   itemBuilder: (context, index) {
                     return Container(
                       width: MediaQuery.of(context).size.width,
@@ -49,8 +48,12 @@ class MainPage extends StatelessWidget {
                               color: Colors.blue,
                               child: Container(
                                 height: MediaQuery.of(context).size.height / 6,
-                                child: Center(
-                                  child: numbers[index],
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                  child: Image.asset(
+                                    imagePaths[index],
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -59,7 +62,7 @@ class MainPage extends StatelessWidget {
                           Expanded(
                             flex: 2,
                             child: Text(
-                              '${names[index]}',
+                              names[index],
                               style: TextStyle(fontSize: 18.0),
                             ),
                           ),
@@ -71,25 +74,25 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ],
-        ),),
-        bottomNavigationBar: Container(
-            color: const Color(0xffC7F9CC),
-            height: 70.0, 
-            child: Row(children: [
-              Container(
-                height: 70.0,
-                width: MediaQuery.of(context).size.width / 4,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xffC7F9CC),
-                    ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: const Color(0xffC7F9CC),
+        height: 70.0,
+        child: Row(
+          children: [
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color(0xffC7F9CC),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
                     ),
                   ),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -100,21 +103,20 @@ class MainPage extends StatelessWidget {
                   Icons.home,
                   color: const Color(0xff22577A),
                 ),
-              ),),
-              Container(
-                width: MediaQuery.of(context).size.width / 4,
-                height: 70.0,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xffC7F9CC),
-                    ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
+              ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color(0xffC7F9CC),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
                     ),
                   ),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -124,55 +126,28 @@ class MainPage extends StatelessWidget {
                   );
                 },
                 child: Icon(Icons.search),
-              ),),
-              Container(
-                width: MediaQuery.of(context).size.width / 4,
-                height: 70.0,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xffC7F9CC),
-                    ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BookmarkPage(),
-                      ),
-                    );
-                  },
-                  child: Icon(Icons.bookmark),
-                ),
               ),
-              Container(
-                height: 70.0,
-                width: MediaQuery.of(context).size.width / 4,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xffC7F9CC),
-                    ),
-                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
+            ),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color(0xffC7F9CC),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => UserProfilePage()),
-                    );
-                  },
-                  child: Icon(Icons.person),
-                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserPage()),
+                  );
+                },
+                child: Icon(Icons.person),
+              ),
             ),
           ],
         ),
@@ -180,3 +155,4 @@ class MainPage extends StatelessWidget {
     );
   }
 }
+

@@ -16,3 +16,16 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+android {
+     defaultConfig {
+         …
+         minSdkVersion 24
+     }
+ }
+ 
+ dependencies {
+    …
+    implementation 'com.google.ar:core:1.33.0'
+}
+
