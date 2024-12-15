@@ -3,9 +3,10 @@ import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
+import 'package:tuto_ar/pages/tutorial_page.dart';
 
 
-final List<String> names = ['Coffee making Tutorial', 'How to make coffee', 'The coffee final guide', "How to make a coffee for beginners"];
+final List<String> names = ['Coffee making Tutorial\n3 ★', 'How to make coffee\n4.2 ★', 'The coffee final guide\n5 ★', "How to make a coffee for beginners\n2.4 ★"];
 final List<Image> numbers = [
   Image.asset('cofe.jpeg'),
   Image.asset('coffe.png'),
@@ -53,13 +54,24 @@ class SearchResult extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 16),
-                          Expanded(
+                            Expanded(
                             flex: 2,
-                            child: Text(
+                            child: GestureDetector(
+                              onTap: () {
+                                // Acción al presionar el botón
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TutorialPage(),
+                                  ),
+                                );
+                              },
+                              child: Text(
                               '${names[index]}',
                               style: TextStyle(fontSize: 18.0),
+                              ),
                             ),
-                          ),
+                            ),
                         ],
                       ),
                     );

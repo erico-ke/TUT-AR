@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+final List<String> names = ['granos de café', 'agua', 'cafetera'];
+
 class TutorialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,24 +14,26 @@ class TutorialPage extends StatelessWidget {
               Container(
                 width: 100,
                 height: 100,
-                child: Image.asset('arduino.png'),
+                child: Image.asset('coffee.jpeg'),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Arduino basics 101',
+                  'The coffee final guide',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
-          Expanded(
+          Container(
+            height: MediaQuery.of(context).size.height / 3,
+            width: MediaQuery.of(context).size.width ,
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return ListTile(
                   leading: Icon(Icons.list),
-                  title: Text('List Item ${index + 1}'),
+                  title: Text('${index + 1}. ${names[index]}'),
                   onTap: () {
                     // !TODO: CAMBIAR A LA PÁGINA DE DETALLE
                     Navigator.push(
@@ -42,6 +46,13 @@ class TutorialPage extends StatelessWidget {
                 );
               },
             ),
+          ),
+          SizedBox(height: 300),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Start learning!'),
           ),
         ],
       ),

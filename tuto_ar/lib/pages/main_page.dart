@@ -3,7 +3,7 @@ import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 
-final List<String> names = ['Arduino Basics 101', 'Changing a Tire', 'How to cook risotto', 'How to change a diaper', 'Giving your Laptop a new Ram'];
+final List<String> names = ['Arduino Basics 101\n5 ★', 'Changing a Tire\n3.6 ★', 'How to cook risotto\n4.8 ★', 'How to change a diaper\n2.1 ★', 'Giving your Laptop a new Ram\n3.3 ★'];
 final List<Image> numbers = [
   Image.asset('arduino.png'),
   Image.asset('tire.png'),
