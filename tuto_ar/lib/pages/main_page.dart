@@ -8,7 +8,7 @@ final List<Image> numbers = [
   Image.asset('arduino.png'),
   Image.asset('tire.png'),
   Image.asset('risotto.png'),
-  Image.asset('diaper.png'),
+  Image.asset('diaper.jpeg'),
   Image.asset('ram.png'),
 ];
 
