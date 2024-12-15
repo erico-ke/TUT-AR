@@ -3,6 +3,7 @@ import 'package:tuto_ar/pages/bookmark_page.dart';
 import 'package:tuto_ar/pages/search_page.dart';
 import 'package:tuto_ar/pages/user_profile_page.dart';
 import 'package:tuto_ar/pages/main_page.dart';
+import 'package:tuto_ar/pages/tutorial_page.dart';
 
 
 final List<String> names = ['Coffee making Tutorial\n3 ★', 'How to make coffee\n4.2 ★', 'The coffee final guide\n5 ★', "How to make a coffee for beginners\n2.4 ★"];
@@ -61,7 +62,7 @@ class SearchResult extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => BookmarkPage(),
+                                    builder: (context) => TutorialPage(),
                                   ),
                                 );
                               },
