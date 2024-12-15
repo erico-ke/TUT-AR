@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final List<String> names = ['granos de café', 'agua', 'cafetera'];
+final List<String> names = ['Granos de café', 'Agua', 'Cafetera'];
 
 class TutorialPage extends StatelessWidget {
   @override
@@ -35,7 +35,6 @@ class TutorialPage extends StatelessWidget {
                   leading: Icon(Icons.list),
                   title: Text('${index + 1}. ${names[index]}'),
                   onTap: () {
-                    // !TODO: CAMBIAR A LA PÁGINA DE DETALLE
                     Navigator.push(
                       context,
                       MaterialPageRoute(
